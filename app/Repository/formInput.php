@@ -1,5 +1,4 @@
-<?php 
-namespace Repository;
+<?php namespace Repository;
 
 
 use photo;
@@ -19,6 +18,7 @@ class formInput implements formInterface{
 				return Redirect::back()->withInput()->withErrors($validation->messages());
 			}
 			$photo = new photo;
+			$photo->id = Input::get('id');
 			$photo->Title = Input::get('Title');
 			$photo->Desc = Input::get('Desc');
 			$photo->Price = Input::get('Price');

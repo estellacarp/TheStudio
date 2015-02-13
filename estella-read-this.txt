@@ -1,0 +1,83 @@
+To look at the commands available to you, open the XAMPP control panel and click the "console" button.
+
+This will open a command prompt already set to the thumb drive. There are really only two commands
+that you will need use, composer and artisan. Composer is what handles installing components
+like the framework itself and it's dependencies. To use composer, it's really simple:
+
+	composer install
+
+That's it. It will take care of installing everything to it's proper place for you and make sure that
+the framework knows all about all the packages installed.
+
+Artisan is a php script included with Laravel that helps you on your projecte specific code. So you
+have to remember to preface it with 'php' so the system knows to run it as a php script. Try to
+type the following:
+
+	php artisan
+
+You will see a big list of commands available to you. There are really only a few that you will be using right now,
+but feel free to check out their descriptions and you may find something you need or would like to explore.
+For now, the first command you should know is this:
+
+	php artisan key:generate
+
+That will generate a new salt key for you. This key is used to help give unique results when encrypting things
+like a password. Don't worry about how to use the salt right now, it is done automatically. What you will 
+want to do with it is make sure that you have a different key set on the production server than the
+one on your laptop. It's randomly generated, so running the command will give you a new unique
+key string and set it to the right variable in your config.
+
+I also included a single package for you to help generate controllers and migrations as you need them. To create
+a new controller, just use the following command:
+
+	php artisan generate:controller NameController
+
+Replace the "Name" in NameController with whatever you would like, but you do have to include the "Controller"
+part, it won't do that automatically for you. It will also generate a bunch of methods in the controller
+that are empty. You can safely remove those and put in what you would like, or you may keep them if
+you wish.
+
+Migrations work by giving a blueprint of how you expect a certain database table to be structured. These are
+great because you can upload your code to the production server, run 'composer install' to install all
+the framework code that your code relies on, then run a single command to build the database for
+you. I'll also go over how to automatically populate the database with a user, and even some
+fake data so that you can easily test it to make sure it's working before you even give
+your client the reins to the website.
+
+To create a new migration use this command:
+
+	php artisan generate:migration create_name_table
+
+Replace the "name" part with something like "users" or "pictures". There is a way to pass in what table column
+names you would like to have, but I feel like right now that may be too much for you to remember. It will be
+easier for you to run that command then add them manually. To add them, open the file you just created in
+/app/database/migrations, it will have a bunch of numbers in front of the file name, they usually match
+up with the date and time of creating the file. This helps prevent conflicts with file names. When
+you open it, there will be two methods, and up and a down. They correspond to create and delete.
+This means you can undo a migration later if you want, but don't worry about it for now. In
+the up method, it will have some code there for you, and between the increments and
+timestamps calls, you put the column names you want. They work by hooking on to
+the table, adding a column type, then giving it a name inside the parenthesis.
+
+	$table->string('name');
+
+This would create a table column type of string, and the column name would be 'name'. If you want a number then
+you would use the 'integer' type, let's say you want to give it a download count:
+
+	$table->integer('download_count');
+
+There are a bunch of other kinds, and you can find more here: http://laravel.com/docs/4.2/schema#adding-columns
+There will really only be three or four kinds that you will be working with for now: integer, string, text
+and softDeletes. You will want to keep the increments and timestamps, as they will be your unique id for
+each entry, and a created at and updated at datetime columns. Use 'string' for when you think that the
+text entered in the column won't be much longer than 320 characters, usually a persons name, email
+address, or a title for a picture would be good times to use it. 'text' is meant for long chunks
+of text, and I really only ever find myself using this when you want to add something like a
+blog post or a description of a picture.
+
+The 'softDeletes' will add a datetime column for when an entry was "deleted", and if that is set to a real date
+than you can have something that counts as deleted, which means it won't show up unless you specifically ask
+to include items marked as deleted. You may or may not want this, I'd say you can easily add it later so
+if you feel like it's more complicated than you want to deal with, then skip it for now. Though I do
+feel like it may be an awesome feature to offer later if you want. And you can always ask for help
+if you find yourself stuck on it.

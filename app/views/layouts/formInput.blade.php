@@ -1,6 +1,4 @@
 
-
-
 <div class ='form-group'>
 {{Form::label('Title','Title:')}}
 {{Form::text('Title', null, ['class' => 'form-control'])}}

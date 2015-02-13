@@ -10,7 +10,7 @@
 
 {{Form::open(['url' => 'save','class'=>'form', 'files'=>true])}}
 @include('layouts.formInput')
-{{Form::Submit(' Save ', ['class' => 'btn btn-primary'])}}
+{{Form::Submit('Save', ['class' => 'btn btn-primary'])}}
 {{Form::close()}}
 
 

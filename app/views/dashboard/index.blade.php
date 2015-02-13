@@ -19,11 +19,12 @@
 				<article>
 				<h1>{{$photoInfo->Title}}</h1>
 				<h1>{{$photoInfo->Desc}}</h1>
-				<h1>{{$photoInfo->price}}</h1>
+				<h1>${{$photoInfo->Price}}</h1>
 				<img src="{{'asset/image/'.$photoInfo->Image.'.jpg'}}">
-				<!-- <img src="{{'asset/image/'.$photoInfo->ImageBig.'.jpg'}}"> -->
-				{{ link_to("editPage/$photoInfo->id", 'Edit')}}
-
+			
+				{{ link_to("editPage/$photoInfo->id",'Edit')}}
+				<br/>
+				{{ link_to("deleteRow/$photoInfo->id",'Delete')}}
 				</article>
 				
 			</div>
@@ -33,6 +34,7 @@
 	@endif
 </div>
 </div>
+
 
 
 @stop

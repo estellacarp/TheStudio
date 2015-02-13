@@ -1,5 +1,6 @@
 <?php
-use Repository\formInput;
+
+use repository\formInput;
 
 class DashboardController extends \BaseController {
 
@@ -22,31 +23,22 @@ class DashboardController extends \BaseController {
 	public function index()
 	{	
 			$photo = photo::paginate(30);
-		return View::make('dashboard.index',['photo'=>$photo], array('name'=>'Estella'));
+		return View::make('dashboard.index',['photo'=>$photo], array('name'=>'Asher'));
 	}
 
 
-	public function editPage($id)
+	public function editPage()
 	{
-		$photo = photo::find($id);
-		return View::make('dashboard.editPage', ['photo'=>$photo], array('name'=>'Estella'));
+		
+		return View::make('dashboard.editPage');
 	}
 
-	public function editPageShow($Title)
+	public function editPageShow($id)
 	{
-		$photo = photo::findOrFail($Title);
+		$photo = photo::findOrFail($id);
 		return View::make('dashboard.editPage', ['photo'=>$photo]);
 	}
-	/**
-	 * Show the form for creating a new resource.
-	 * GET /dashboard/create
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		return View::make('dashboard.create');
-	}
+
 
 	/**
 	 * Store a newly created resource in storage.
@@ -60,29 +52,7 @@ class DashboardController extends \BaseController {
 			return Redirect::to('dashboard');
 		}
 
-	/**
-	 * Display the specified resource.
-	 * GET /dashboard/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 * GET /dashboard/{id}/edit
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		
-	}
+	
 
 	/**
 	 * Update the specified resource in storage.
@@ -106,7 +76,10 @@ class DashboardController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$photo = Photo::find($id);
+		$photo-> delete();
+
+		return Redirect:: to('dashboard');
 	}
 
 }

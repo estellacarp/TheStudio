@@ -17,13 +17,16 @@ class HomeController extends BaseController {
 
 	public function index()
 	{
-		return View::make('public.home');
+
+		$photo = photo::paginate(30);
+		return View::make('public.home',['photo'=>$photo]);
 	}
 
 	public function gallery()
 	{
 		$photo = photo::paginate(30);
-		return View::make('public.gallery',['photo'=> $photo]);
+		
+		return View::make('public.gallery',['photo'=>$photo]);
 	}
 
 	public function contact()
