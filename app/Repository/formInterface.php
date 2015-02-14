@@ -1,4 +1,4 @@
-<?php namespace Repository;
+<?php namespace repository;
 
 
 interface formInterface {
