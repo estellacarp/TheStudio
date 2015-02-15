@@ -1,3 +1,24 @@
 .content{
-	background-color: #E3CEF6;
+	background-color: ;
+}
+body{
+	background-color:;
+}
+a:link{
+	 color: #86EBE9;
+}
+a:visited {
+    color: #86EBE9;
+}
+.Elink{
+	font-size: 15pt;
+}
+#textTitle{
+	font-size: 30pt;
+}
+#textDesc{
+	font-size: 15pt;
+}
+#textPrice{
+	font-size: 20pt;
 }

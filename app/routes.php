@@ -29,14 +29,19 @@ Route::get('deleteRow/{id}','DashboardController@destroy');
 
 Route::post('save', 	'DashboardController@store');
 
-Route::get('gallery', 	'HomeController@gallery');
+
 Route::get('contact', 	'HomeController@contact');
-Route::get('hist', 		'HomeController@hist');
+Route::get('portfolio',	'HomeController@portfolio');
 Route::get('work', 	    'HomeController@work');
 Route::get('bio',       'HomeController@bio');
+Route::get('event',		'HomeController@event');
+Route::get('fineArt',	'HomeController@fineArt');
+Route::get('gallery', 	'HomeController@gallery');
 
 Route::post('login',	'AuthController@auth');
 Route::post('logout',	 'AuthController@logout');
 
 Route::Resource('photo', 'DashboardController');
 Route::bind('repository\formInterface', 'repository\formInput');
+
+

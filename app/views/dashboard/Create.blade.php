@@ -4,9 +4,7 @@
 
 @section('content')
 
-<H1>This is for me to add information to the site</H1>
-
-
+<H1>Fill out the form to add pictures.</H1>
 
 {{Form::open(['url' => 'save','class'=>'form', 'files'=>true])}}
 @include('layouts.formInput')

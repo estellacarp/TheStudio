@@ -1,25 +1,26 @@
 @extends('layouts.public')
 
-@section('title') Portriats @stop
+@section('title') Events @stop
 
 @section('css')
 <link rel="stylesheet" href="thispage.css">
 @stop
 
 @section('content')
-
-<h1>This is the Portraits</h1>
 @include('layouts.galleryMenu')
+<h1>This is the Events Gallery</h1>
+
 <div class="container">
 <div class="row">
 	@if (isset($photo))
 		@foreach($photo as $photoInfo)
 			
-			<div class="col-md-3">
+			<div class="col-md-4">
 				<article>
 				<h1>{{$photoInfo->Title}}</h1>
-				<h1>$ {{$photoInfo->Price}}</h1>
 				<img src="{{'asset/image/'.$photoInfo->Image.'.jpg'}}">
+				<p>${{$photoInfo->Price}}.00</p>
+				<p>{{$photoInfo->Desc}}</p>
 				</article>
 			</div>
 		@endforeach

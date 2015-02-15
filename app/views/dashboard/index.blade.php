@@ -11,22 +11,20 @@
 
 
 <div class="container-fluid">
-<div class="row">
+<div class="row" >
 	@if (isset($photo))
 		@foreach($photo as $photoInfo)
-			
-			<div class="col-md-4">
-				<article>
-				<h1>{{$photoInfo->Title}}</h1>
-				<h1>{{$photoInfo->Desc}}</h1>
-				<h1>${{$photoInfo->Price}}</h1>
-				<img src="{{'asset/image/'.$photoInfo->Image.'.jpg'}}">
-			
-				{{ link_to("editPage/$photoInfo->id",'Edit')}}
-				<br/>
-				{{ link_to("deleteRow/$photoInfo->id",'Delete')}}
+			<div class="col-md-3">
+				<article >
+					<h1 id="textTitle">{{$photoInfo->Title}}</h1>
+					<h1 id="textDesc">{{$photoInfo->Desc}}</h1>
+					<h1 id="textPrice">${{$photoInfo->Price}}</h1>
+					<img src="{{'asset/image/'.$photoInfo->Image.'.jpg'}}" width="15%">
+					<ul class="nav nav-pills">
+						<li class="active" class="Elink">{{link_to("editPage/$photoInfo->id",'Edit')}}</li>
+						<li class="active" class="Elink">{{link_to("deleteRow/$photoInfo->id",'Delete')}}</li>
+					</ul>
 				</article>
-				
 			</div>
 		@endforeach
 	@else

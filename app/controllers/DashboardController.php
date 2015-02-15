@@ -1,6 +1,5 @@
 <?php
-
-use repository\formInput;
+use Repository\formInput;
 
 class DashboardController extends \BaseController {
 
@@ -41,6 +40,17 @@ class DashboardController extends \BaseController {
 
 
 	/**
+	 * Show the form for creating a new resource.
+	 * GET /dashboard/create
+	 *
+	 * @return Response
+	 */
+	public function create()
+	{
+		return View::make('dashboard.create');
+	}
+
+	/**
 	 * Store a newly created resource in storage.
 	 * POST /dashboard
 	 *
@@ -52,7 +62,29 @@ class DashboardController extends \BaseController {
 			return Redirect::to('dashboard');
 		}
 
-	
+	/**
+	 * Display the specified resource.
+	 * GET /dashboard/{id}
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function show($id)
+	{
+		//
+	}
+
+	/**
+	 * Show the form for editing the specified resource.
+	 * GET /dashboard/{id}/edit
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function edit($id)
+	{
+		
+	}
 
 	/**
 	 * Update the specified resource in storage.

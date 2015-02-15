@@ -1,4 +1,5 @@
-<?php namespace repository;
+<?php 
+namespace Repository;
 
 
 use photo;

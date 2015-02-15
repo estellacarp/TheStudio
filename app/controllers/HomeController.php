@@ -25,7 +25,6 @@ class HomeController extends BaseController {
 	public function gallery()
 	{
 		$photo = photo::paginate(30);
-		
 		return View::make('public.gallery',['photo'=>$photo]);
 	}
 
@@ -34,9 +33,10 @@ class HomeController extends BaseController {
 		return View::make('public.contact');
 	}
 
-	public function hist()
+	public function portfolio()
 	{
-		return View::make('public.hist');
+		
+		return View::make('public.portfolio');
 	}
 
 	public function work()
@@ -48,6 +48,18 @@ class HomeController extends BaseController {
 	{
 		
 		return View::make('public.bio');
+	}
+
+	public function event()
+	{
+		$photo = photo::paginate(30);
+		return View::make('public.event',['photo'=>$photo]);
+	}
+
+	public function fineArt()
+	{
+		$photo = photo::paginate(30);
+		return View::make('public.fineArt',['photo'=>$photo]);
 	}
 
 	
