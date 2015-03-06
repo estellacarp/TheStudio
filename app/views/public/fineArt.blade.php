@@ -7,7 +7,6 @@
 @stop
 
 @section('content')
-@include('layouts.galleryMenu')
 <h1>This is the Fine Art Gallery</h1>
 
 <div class="container">

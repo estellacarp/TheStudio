@@ -3,13 +3,12 @@
 @section('title') Portriats @stop
 
 @section('css')
-<link rel="stylesheet" href="thispage.css">
+
 @stop
 
 @section('content')
 
 <h1>This is the Portraits</h1>
-@include('layouts.galleryMenu')
 <div class="container">
 <div class="row">
 	@if (isset($photo))

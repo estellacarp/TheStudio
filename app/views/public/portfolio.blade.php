@@ -3,7 +3,6 @@
 @section('title') Home @stop
 
 @section('css')
-<link rel="stylesheet" href="thispage.css">
 @stop
 
 @section('content')

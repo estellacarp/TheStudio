@@ -52,8 +52,8 @@ class HomeController extends BaseController {
 
 	public function event()
 	{
-		$photo = photo::paginate(30);
-		return View::make('public.event',['photo'=>$photo]);
+		$event = photo::paginate(30);
+		return View::make('public.event',['photo'=>$event]);
 	}
 
 	public function fineArt()

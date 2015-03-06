@@ -1,8 +1,11 @@
 .content{
-	background-color: ;
+	background-color: #435158;
+	/*font-family: "Times New Roman", Georgia, Serif;*/
 }
 body{
-	background-color:;
+	/*background-image: url("../image/IMG_5004.JPG");*/
+	background-color:#303030;
+	font-family: "Times New Roman", Georgia, Serif;;
 }
 a:link{
 	 color: #86EBE9;
@@ -22,3 +25,61 @@ a:visited {
 #textPrice{
 	font-size: 20pt;
 }
+ #logo{
+	margin-left: 10%;
+}
+h1{
+	 color: #86EBE9;
+}
+p{
+	color:#DFFFFF;
+}
+h2{
+	color:#DFFFFF;
+}
+#section{
+	
+	float:left;
+    padding:15px;
+	line-height: 70%;
+    color: #86EBE9;
+    background-color:#303030; 
+}
+pre{
+	border:none;
+	background-color:#303030;
+	color:#DFFFFF;
+	font-size: 1.2pc;
+	font-family: "Times New Roman", Georgia, Serif;
+}
+.floatLeft{
+	margin: 5px;
+	float: left;
+}
+
+.floatRight{
+	margin: 5px;
+	float: right;
+}
+
+#topNav{
+	background color: red;
+}
+
+.homeWrapper{
+	height: 200px;
+	width: 80%;
+	margin-left:10%;
+	background-image: url("../image/IMG_5004.JPG");
+}
+
+#bottomNav{
+	background-color: red;
+}
+
+#logo{
+	margin-left: 10%;
+}
+/*#homeImage{
+	background-image: url("../image/IMG_5004.JPG");
+}*/

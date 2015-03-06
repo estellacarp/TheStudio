@@ -7,20 +7,19 @@
 @stop
 
 @section('content')
-@include('layouts.galleryMenu')
 <h1>This is the Events Gallery</h1>
 
 <div class="container">
 <div class="row">
-	@if (isset($photo))
-		@foreach($photo as $photoInfo)
+	@if (isset($event))
+		@foreach($event as $eventInfo)
 			
 			<div class="col-md-4">
 				<article>
-				<h1>{{$photoInfo->Title}}</h1>
+				<h1>{{$eventInfo->Title}}</h1>
 				<img src="{{'asset/image/'.$photoInfo->Image.'.jpg'}}">
-				<p>${{$photoInfo->Price}}.00</p>
-				<p>{{$photoInfo->Desc}}</p>
+				<p>${{$eventInfo->Price}}.00</p>
+				<p>{{$eventInfo->Desc}}</p>
 				</article>
 			</div>
 		@endforeach
