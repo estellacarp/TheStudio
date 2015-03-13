@@ -5,7 +5,7 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 
 class photo extends Eloquent implements UserInterface, RemindableInterface {
 
-    protected $fillable = ['id','Title', 'Desc', 'Image', 'ImageBig', 'Price' ];
+    protected $fillable = ['id','idArt','idCom','idPort','Title', 'Desc', 'Image', 'ImageBig', 'Price' ];
 
     public static $rules = [
         'Title'    => 'required'   
@@ -32,6 +32,8 @@ class photo extends Eloquent implements UserInterface, RemindableInterface {
      *
      * @return mixed
      */
+
+  
     public function getAuthIdentifier()
     {
         return $this->getKey();
@@ -96,5 +98,6 @@ class photo extends Eloquent implements UserInterface, RemindableInterface {
         $this->errors = $validation->messages();
             return false;
     }
+
 
 }

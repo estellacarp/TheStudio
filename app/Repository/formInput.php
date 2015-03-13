@@ -23,6 +23,9 @@ class formInput implements formInterface{
 			$photo->Title = Input::get('Title');
 			$photo->Desc = Input::get('Desc');
 			$photo->Price = Input::get('Price');
+			$photo->idArt = Input::get('idArt');
+			$photo->idCom = Input::get('idCom');
+			$photo->idPort = Input::get('idPort');
 			
 			if (Input::hasFile('ImageBig')) {
 
@@ -66,6 +69,9 @@ class formInput implements formInterface{
 			$photo->Title  = Input::get('Title');
 			$photo->Desc   = Input::get('Desc');
 			$photo->Price = Input::get('Price');
+			$photo->idArt = Input::get('idArt');
+			$photo->idCom = Input::get('idCom');
+			$photo->idPort = Input::get('idPort');
 			
 
 			if (Input::hasFile('ImageBig')) {

@@ -3,7 +3,7 @@
 @section('title') Fine Art @stop
 
 @section('css')
-<link rel="stylesheet" href="thispage.css">
+
 @stop
 
 @section('content')
@@ -16,10 +16,12 @@
 			
 			<div class="col-md-4">
 				<article>
-				<h1>{{$photoInfo->Title}}</h1>
-				<img src="{{'asset/image/'.$photoInfo->Image.'.jpg'}}">
+				<a href="{{URL::to('large/'. $photoInfo->id)}}">
+				<h1>{{$photoInfo->Title}} </h1>
+				<img src="{{'/asset/image/'.$photoInfo->Image.'.jpg'}}" >
 				<p>${{$photoInfo->Price}}.00</p>
-				<p>{{$photoInfo->Desc}}</p>
+				</a>
+				</li>
 				</article>
 			</div>
 		@endforeach

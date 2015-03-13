@@ -4,8 +4,8 @@
 
 @section('css')
 
+
 @stop
-<body style = background-image: url("../image/IMG_5004.JPG")>
 
 @section('content')
 

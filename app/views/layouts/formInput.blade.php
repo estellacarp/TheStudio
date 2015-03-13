@@ -16,6 +16,16 @@
 {{Form::text('Price', null, ['class' => 'form-control'])}}
 </div>
 
+<div class ='form-group'>
+{{Form::label('idArt', 'Fine Art:')}}
+{{Form::checkbox('idArt')}} 
+<br>
+{{Form::label('idCom', 'Commercial:')}}
+{{Form::checkbox('idCom')}} 
+<br>
+{{Form::label('idPort', 'Portraits:')}}
+{{Form::checkbox('idPort')}}
+</div>
 
 <div class ='form-group'>
 {{Form::label('ImageBig','Image Upload:')}}

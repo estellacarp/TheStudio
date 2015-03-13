@@ -6,7 +6,7 @@
 				<ul class="dropdown-menu" role="menu">
 					<li><a href="{{ URL::to('fineArt') }}">Fine Art</a></li>
 					<li><a href="{{ URL::to('gallery') }}">Portraits</a></li>
-					<li><a href="{{ URL::to('event') }}">Events</a></li>
+					<li><a href="{{ URL::to('event') }}">Commercial</a></li>
 				</ul>
 		</li>
 		<li role="presentation"><a href= "{{ URL::to('contact')}}">Contact Us</a></li>

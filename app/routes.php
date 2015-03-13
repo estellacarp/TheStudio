@@ -35,13 +35,17 @@ Route::get('portfolio',	'HomeController@portfolio');
 Route::get('work', 	    'HomeController@work');
 Route::get('bio',       'HomeController@bio');
 Route::get('event',		'HomeController@event');
-Route::get('fineArt',	'HomeController@fineArt');
+Route::get('fineArt',	'HomeController@fineArt')->where('idArt','\d+');
 Route::get('gallery', 	'HomeController@gallery');
+Route::get('large/{id}','HomeController@large')->where('id','\d+');
 
 Route::post('login',	'AuthController@auth');
 Route::post('logout',	 'AuthController@logout');
 
 Route::Resource('photo', 'DashboardController');
 Route::bind('repository\formInterface', 'repository\formInput');
+
+Route::get('next/{id}', 'HomeController@next')->where('id', '\d+');
+
 
 

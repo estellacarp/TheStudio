@@ -52,14 +52,24 @@ class HomeController extends BaseController {
 
 	public function event()
 	{
-		$event = photo::paginate(30);
-		return View::make('public.event',['photo'=>$event]);
+		$photo = photo::all();
+		return View::make('public.event',['photo'=>$photo]);
 	}
 
 	public function fineArt()
 	{
 		$photo = photo::paginate(30);
 		return View::make('public.fineArt',['photo'=>$photo]);
+	}
+	public function large($id)
+	{
+		$photo = photo::findOrFail($id);
+		return View::make('public.largeImage',['photo'=> $photo]);
+	}
+	public function next()
+	{
+		$next = photo::where('id', '<',$photo->id);
+		return View:: make('public.largeImage',['photo'=> $photo]);
 	}
 
 	

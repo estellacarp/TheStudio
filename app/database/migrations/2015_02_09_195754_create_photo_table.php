@@ -15,6 +15,9 @@ class CreatePhotoTable extends Migration {
 		Schema::create('photo', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->boolean("idArt");
+			$table->boolean("idCom");
+			$table->boolean("idPort");
 			$table->String('Title');
 			$table->String('Desc');
 			$table->String('Price');
