@@ -15,7 +15,7 @@
 	@if (isset($photo))
 			@foreach($photo as $photoInfo)
 			
-			<div class="col-md-4">
+			<div class="col-md-6">
 				<article>
 				<h1>{{$photoInfo->Title}}</h1>
 				<img src="{{'asset/image/'.$photoInfo->Image.'.jpg'}}">

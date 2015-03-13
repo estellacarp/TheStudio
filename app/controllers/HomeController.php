@@ -24,7 +24,7 @@ class HomeController extends BaseController {
 
 	public function gallery()
 	{
-		$photo = photo::paginate(30);
+		$photo = photo::where('idPort','=','1')->get();
 		return View::make('public.gallery',['photo'=>$photo]);
 	}
 
@@ -52,13 +52,13 @@ class HomeController extends BaseController {
 
 	public function event()
 	{
-		$photo = photo::all();
+		$photo = photo::where('idCom','=','1')->get();
 		return View::make('public.event',['photo'=>$photo]);
 	}
 
 	public function fineArt()
 	{
-		$photo = photo::paginate(30);
+		$photo = photo::where('idArt','=','1')->get();
 		return View::make('public.fineArt',['photo'=>$photo]);
 	}
 	public function large($id)
@@ -66,12 +66,11 @@ class HomeController extends BaseController {
 		$photo = photo::findOrFail($id);
 		return View::make('public.largeImage',['photo'=> $photo]);
 	}
-	public function next()
+	public function next($id)
 	{
-		$next = photo::where('id', '<',$photo->id);
-		return View:: make('public.largeImage',['photo'=> $photo]);
+		$photo = photo::all($id);
+		$photo = photo::where('id','>', $photo->id)->min('id');
+		return View:: make('public.largeImage',['photo'=>$photo]);
 	}
-
-	
 
 }

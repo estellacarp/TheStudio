@@ -14,7 +14,7 @@
 	@if (isset($photo))
 		@foreach($photo as $photoInfo)
 			
-			<div class="col-md-4">
+			<div class="col-md-6">
 				<article>
 				<a href="{{URL::to('large/'. $photoInfo->id)}}">
 				<h1>{{$photoInfo->Title}} </h1>

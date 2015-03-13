@@ -17,7 +17,7 @@
 		</article>
 <hr>
 <a href="{{ URL ::previous() }}">Back</a>
-<a href="{{ URL ::next() }}">Next<a/>
+<a href="{{ URL ::to('next/'. $photo->id)}}">Next</a>
 
 
 @stop
