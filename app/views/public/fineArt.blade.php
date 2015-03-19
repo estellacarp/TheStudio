@@ -7,21 +7,19 @@
 @stop
 
 @section('content')
-<h1>This is the Fine Art Gallery</h1>
+<h1>Fine Art Gallery</h1>
 
 <div class="container">
 <div class="row">
 	@if (isset($photo))
 		@foreach($photo as $photoInfo)
 			
-			<div class="col-md-6">
-				<article>
-				<a href="{{URL::to('large/'. $photoInfo->id)}}">
-				<h1>{{$photoInfo->Title}} </h1>
+			<div class="col-md-3">
+				<article id="images">
+				<a href="{{URL::to('largeArt/'. $photoInfo->id)}}">
+				<h2>{{$photoInfo->Title}} </h2>
 				<img src="{{'/asset/image/'.$photoInfo->Image.'.jpg'}}" >
-				<p>${{$photoInfo->Price}}.00</p>
 				</a>
-				</li>
 				</article>
 			</div>
 		@endforeach

@@ -1,48 +1,12 @@
-.content{
-	background-color: #435158;
-}
 body{
 	/*background-image: url("../image/IMG_5004.JPG");*/
 	background-color:#303030;
 	color: #FFFFFF;
 }
-
-a:link{
-	 color: #FFFFFF;
-}
-
-a:visited {
-    color: #FFFFFF;
-}
-
-.Elink{
-	font-size: 15pt;
-}
-
-#textTitle{
-	font-size: 30pt;
-}
-
-#textDesc{
-	font-size: 15pt;
-}
-
-#textPrice{
-	font-size: 20pt;
-}
-
- #logo{
-	margin-left: 10%;
-}
-
 h1{
 	color: #FFFFFF;
 	font-weight: 50;
 	font-size: 30pt;
-}
-
-p{
-	color:#DFFFFF;
 }
 
 h2{
@@ -54,7 +18,43 @@ h3{
 	font-size: 20px;
 }
 
-#section{	
+p{
+	color:#DFFFFF;
+	font-size: 15px;
+}
+
+/*This is for the menu*/
+a:link{
+	 color: #FFFFFF;
+}
+
+a:visited {
+    color: #FFFFFF;
+}
+
+/*This is for the dashboard index*/
+.Elink{
+	font-size: 15pt;
+}
+
+#textTitle{
+	font-size: 20pt;
+}
+
+#textDesc{
+	font-size: 10pt;
+}
+
+#textPrice{
+	font-size: 10pt;
+}
+
+ #logo{
+	margin-left: 10%;
+}
+
+/*This is for the layout on the contact page*/
+#section{
 	float:left;
     padding:15px;
 	line-height: 70%;
@@ -69,6 +69,38 @@ pre{
 	font-size: 1.2pc;
 	font-family: "Times New Roman", Georgia, Serif;
 }
+/*This is for the home page*/
+.homeWrapper{
+	height: 500px;
+	width: 80%;
+	margin-left:10%;
+	/*background-image: url("../image/IMG_5004.JPG");*/
+}
+
+#logo{
+	margin-left: 10%;
+}
+/*#homeImage{
+	background-image: url("../image/IMG_5004.JPG");
+}*/
+
+#images{
+	max-width: 50%;
+	min-height: 385px;
+	text-align: center;
+}
+#BN{
+	font-size:25px;
+}
+
+#bigImage{
+	text-align: center;
+
+}
+/*.textLarge{
+	text-align: left;
+}*/
+
 .floatLeft{
 	margin: 5px;
 	float: left;
@@ -83,23 +115,12 @@ pre{
 	background color: red;
 }
 
-.homeWrapper{
-	height: 500px;
-	width: 80%;
-	margin-left:10%;
-	/*background-image: url("../image/IMG_5004.JPG");*/
-}
+
 
 #bottomNav{
 	background-color: red;
 }
 
-#logo{
-	margin-left: 10%;
-}
-/*#homeImage{
-	background-image: url("../image/IMG_5004.JPG");
-}*/
 @font-face{
 	font-family: "M+1c";
 	scr: url(fontsquirrel.com/fonts/M-1c); 

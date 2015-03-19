@@ -5,20 +5,16 @@
 @section('css')
 @stop
 @section('content')
-<h1> View</h1>
-<article>
-		<h1>{{$photo->Title}}</h1>	
-		<br/>
-		<img src="{{'../public/asset/image/'.$photo->ImageBig.'.jpg' }}" alt="{{ $photo->Title}}">
-		<h1>{{$photo->Desc}}</h1>
-		<br/>
-		<h1>${{$photo->Price}}.00</h1>
-		<br/>
+
+		<article id="bigImage">
+			<h1 class="textLarge">{{$photo->Title}}</h1>	
+			<h2 class="textLarge">{{$photo->Desc}}</h2>
+			<h2 class="textLarge">${{$photo->Price}}.00</h2>
+				<a href="{{ URL ::previous() }}" id="BN">Back</a>
+			<img src="{{ asset('asset/image/'. $photo->ImageBig.'.jpg') }}" alt="{{ $photo->Title}}">
+				<a href="{{ URL ::to ('next')}}" id="BN">Next</a>
+			<br/>
 		</article>
 <hr>
-<a href="{{ URL ::previous() }}">Back</a>
-<a href="{{ URL ::to('next/'. $photo->id)}}">Next</a>
-
-
 @stop
 @stop

@@ -8,16 +8,15 @@
 
 @section('content')
 
-<h1>This is the Portraits</h1>
+<h1>Portraits Gallery</h1>
 <div class="container">
 <div class="row">
 	@if (isset($photo))
 		@foreach($photo as $photoInfo)
 			
-			<div class="col-md-6">
-				<article>
-				<h1>{{$photoInfo->Title}}</h1>
-				<h1>$ {{$photoInfo->Price}}</h1>
+			<div class="col-md-3">
+				<article id ="images">
+				<h2>{{$photoInfo->Title}}</h2>
 				<img src="{{'asset/image/'.$photoInfo->Image.'.jpg'}}">
 				</article>
 			</div>

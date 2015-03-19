@@ -9,7 +9,7 @@
 		
 	</head>
 	<body>
-		<img id="logo"  src="asset/image/logo.jpg" width="80%">
+		<img id="logo"  src="{{ asset('asset/image/Logo.jpg') }}" width="80%">
 		@include('layouts.menu')
 		@yield('content')
 

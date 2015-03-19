@@ -22,7 +22,7 @@ class DashboardController extends \BaseController {
 	public function index()
 	{	
 			$photo = photo::paginate(30);
-		return View::make('dashboard.index',['photo'=>$photo], array('name'=>'Asher'));
+		return View::make('dashboard.index',['photo'=>$photo], array('name'=>'Asher and Michael'));
 	}
 
 

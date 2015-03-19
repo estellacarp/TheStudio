@@ -27,25 +27,28 @@ Route::post('update', array(''));
 
 Route::get('deleteRow/{id}','DashboardController@destroy');
 
-Route::post('save', 	'DashboardController@store');
+Route::post('save', 		'DashboardController@store');
 
 
-Route::get('contact', 	'HomeController@contact');
-Route::get('portfolio',	'HomeController@portfolio');
-Route::get('work', 	    'HomeController@work');
-Route::get('bio',       'HomeController@bio');
-Route::get('event',		'HomeController@event');
-Route::get('fineArt',	'HomeController@fineArt')->where('idArt','\d+');
-Route::get('gallery', 	'HomeController@gallery');
-Route::get('large/{id}','HomeController@large')->where('id','\d+');
+Route::get('contact', 		'HomeController@contact');
+Route::get('portfolio',		'HomeController@portfolio');
+Route::get('work', 	    	'HomeController@work');
+Route::get('bio',       	'HomeController@bio');
+Route::get('event',			'HomeController@event');
+Route::get('fineArt',		'HomeController@fineArt');
+Route::get('gallery', 		'HomeController@gallery');
+Route::get('largeArt/{id}',	'HomeController@largeArt')->where('id','\d+');
+Route::get('largePort/{id}','HomeController@largePort')->where('id','\d+');
+Route::get('largeCom/{id}',	'HomeController@largeCom')->where('id','\d+');
+Route::get('next/{id}',		'HomeController@largeArt')->where('id','\d+');
 
-Route::post('login',	'AuthController@auth');
-Route::post('logout',	 'AuthController@logout');
+Route::post('login',		'AuthController@auth');
+Route::post('logout',	 	'AuthController@logout');
 
-Route::Resource('photo', 'DashboardController');
+Route::Resource('photo', 	'DashboardController');
 Route::bind('repository\formInterface', 'repository\formInput');
 
-Route::get('next/{id}', 'HomeController@next')->where('id', '\d+');
-
+Route::post('next/{id}', 	'HomeController@largeArt')->where('id', '\d+');
+Route::post('next',array(''));
 
 

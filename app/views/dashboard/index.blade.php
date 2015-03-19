@@ -3,7 +3,7 @@
 @section('title') Home @stop
 
 @section('css')
-<link rel="stylesheet" href="thispage.css">
+
 @stop
 
 @section('content')
@@ -15,7 +15,7 @@
 	@if (isset($photo))
 		@foreach($photo as $photoInfo)
 			<div class="col-md-3">
-				<article >
+				<article id="images" >
 					<h1 id="textTitle">{{$photoInfo->Title}}</h1>
 					<h1 id="textDesc">{{$photoInfo->Desc}}</h1>
 					<h1 id="textPrice">${{$photoInfo->Price}}</h1>

@@ -61,16 +61,16 @@ class HomeController extends BaseController {
 		$photo = photo::where('idArt','=','1')->get();
 		return View::make('public.fineArt',['photo'=>$photo]);
 	}
-	public function large($id)
+	public function largeArt($id)
 	{
 		$photo = photo::findOrFail($id);
 		return View::make('public.largeImage',['photo'=> $photo]);
 	}
 	public function next($id)
 	{
-		$photo = photo::all($id);
-		$photo = photo::where('id','>', $photo->id)->min('id');
-		return View:: make('public.largeImage',['photo'=>$photo]);
+		$photo = photo::findOrFail($id);
+		$next = photo::where('id', '>', 25)->get();
+		return View::make('public.largeArt',['photo'=>$photo])->with('next',$next);
 	}
 
 }
